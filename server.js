@@ -23,12 +23,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    pageTitle: 'Woah there!',
-    currentYear: new Date().getFullYear(),
-  });
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     pageTitle: 'Woah there!',
+//     currentYear: new Date().getFullYear(),
+//   });
+// });
 
 app.use(express.static(__dirname + '/public'));
 
