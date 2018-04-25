@@ -23,12 +23,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    pageTitle: 'Woah there!',
-    currentYear: new Date().getFullYear(),
-  });
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     pageTitle: 'Woah there!',
+//     currentYear: new Date().getFullYear(),
+//   });
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -38,21 +38,19 @@ app.get('/', (req, res) => {
     loginGreeting: 'Welcome to your website',
     currentYear: new Date().getFullYear()
   });
-  // res.send('<h1>Hello express!</h1>');
-  // res.send({
-  //   name: 'Pasquale',
-  //   likes: [
-  //     'Skateboards',
-  //     'Oakland',
-  //     'Stupid code'
-  //   ],
-  // });
-
 });
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
+    currentYear: new Date().getFullYear()
+  });
+
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
     currentYear: new Date().getFullYear()
   });
 
